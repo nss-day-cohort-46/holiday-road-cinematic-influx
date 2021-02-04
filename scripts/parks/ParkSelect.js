@@ -1,17 +1,17 @@
-import {useParks, getParks} from "./ParkProvider.js"
-import {Park} from "./Park.js"
+import { useParks, getParks } from "./ParkProvider.js"
+import { Park } from "./Park.js"
 
 const parksContainer = document.querySelector(".parkContainer")
-const eventHub =  document.querySelector(".container")
+const eventHub = document.querySelector(".container")
 
 //console.log(eventHub)
 
 export const ParkSelect = () => {
     getParks()
-    .then(() => {
-        const parksArray = useParks()
-        render(parksArray)
-    })
+        .then(() => {
+            const parksArray = useParks()
+            render(parksArray)
+        })
 }
 
 const render = (parkCollection) => {
@@ -20,7 +20,7 @@ const render = (parkCollection) => {
     <option value="0">Select A Park...</option>
     ${parkCollection.map(parksObj => `
     <option value="${parksObj.id}">${parksObj.fullName}</option>
-    ` 
+    `
     ).join("")}
     </select>
     `
