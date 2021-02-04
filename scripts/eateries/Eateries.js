@@ -1,3 +1,5 @@
 export const eateries = (eateriesObj) => {
-  return;
+  return `
+  <h2 class="parkName">Park Name: ${eateriesObj.businessName}</h2>
+  `;
 };
