@@ -26,21 +26,20 @@ const render = (parkCollection) => {
     `
 }
 
+const contentTarget = document.querySelector(".previewContainer")
+
+
 eventHub.addEventListener("change", changeEvent => {
-    if (changeEvent.target.id === "parkSelect") {
-        
-        const selectedPark = changeEvent.target.value
+ if (changeEvent.target.id === "parkSelect") {
+     const selectedPark = changeEvent.target.value
+     
+     const customEvent = new CustomEvent("parkSelected", {
+         detail: {
+             selectedPark: selectedPark
+         }
+     })
+console.log(customEvent)
+     eventHub.dispatchEvent(customEvent)
 
-
-        // Define a custom event
-        const customEvent = new CustomEvent("parkSelected", {
-            detail: {
-                selectedPark: selectedPark,
-
-            }
-        })
-        console.log(customEvent)
-        // Dispatch event to event hub
-        eventHub.dispatchEvent(customEvent)
-    }
+ }
 })
