@@ -9,6 +9,6 @@ export const getAttractions = () => {
         .then(response => response.json())
         .then(parsedResponse => {
             attractions = parsedResponse
-            // console.log(attractions)
+            console.log(attractions)
         })
 }
