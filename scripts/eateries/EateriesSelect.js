@@ -27,3 +27,17 @@ const render = (eateriesCollection) => {
     </select>
     `;
 };
+
+eventHub.addEventListener("change", (changeEvent) => {
+  if (changeEvent.target.id === "eateriesSelect") {
+    const selectedEateries = changeEvent.target.value;
+
+    const customEvent = new CustomEvent("eateriesSelected", {
+      detail: {
+        selectedEateries: selectedEateries,
+      },
+    });
+    console.log(customEvent);
+    eventHub.dispatchEvent(customEvent);
+  }
+});
