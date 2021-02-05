@@ -26,7 +26,7 @@ const render = (parkCollection) => {
     `
 }
 
-const contentTarget = document.querySelector(".previewContainer")
+
 
 
 eventHub.addEventListener("change", changeEvent => {
@@ -38,7 +38,7 @@ eventHub.addEventListener("change", changeEvent => {
              selectedPark: selectedPark
          }
      })
-console.log(customEvent)
+console.log()
      eventHub.dispatchEvent(customEvent)
 
  }

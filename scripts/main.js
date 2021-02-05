@@ -5,7 +5,7 @@ import { ParkSelect } from "./parks/ParkSelect.js";
 import { getEateries, useEateries } from "./eateries/EateryProvider.js";
 import { EateriesSelect } from "./eateries/EateriesSelect.js";
 import { AttractionSelect } from "./attractions/AttractionsSelect.js";
-import "./Preview/Preview.js";
+import "./parks/ParkPreview.js";
 
 useParks();
 getParks();
