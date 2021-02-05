@@ -1,5 +1,5 @@
 import { useEateries, getEateries } from "./EateryProvider.js";
-import { eateries } from "./Eateries.js";
+// import { Eateries } from "./Eateries.js";
 
 const eateriesContainer = document.querySelector(".eateriesContainer");
 const eventHub = document.querySelector(".container");
@@ -20,7 +20,7 @@ const render = (eateriesCollection) => {
     ${eateriesCollection
       .map(
         (eateriesObj) => `
-    <option value="${eateriesObj.id}">${eateriesObj.businessName}</option>
+    <option value="${eateriesObj.businessName}">${eateriesObj.businessName}</option>
     `
       )
       .join("")}
