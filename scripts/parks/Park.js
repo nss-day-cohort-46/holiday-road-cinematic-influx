@@ -1,4 +1,5 @@
 import "./ParkDetail.js"
+
 export const Park = (parkObj) => {
     return `
     <h2 class="parkName">Park Name: ${parkObj.fullName}</h2>
@@ -16,19 +17,11 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("parks--")) {
         const [prefix, parkId] = event.target.id.split("--")
-
         const customEvent = new CustomEvent("DetailsClicked", {
             detail: {
-                parkId: parseInt(parkId)
+                parkId: parkId
             }
         })
         eventHub.dispatchEvent(customEvent)
     }
 })
-
-
-
-// const attractionsArray = useAttractions()
-//             const selectedAttraction = attractionsArray.find((attraction) => attraction.id === parseInt(attractionId))
-//             contentTarget.innerHTML = `
-//             ${detailsWindow(selectedAttraction)
