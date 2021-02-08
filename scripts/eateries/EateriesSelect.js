@@ -1,5 +1,5 @@
 import { useEateries, getEateries } from "./EateryProvider.js";
-// import { Eateries } from "./Eateries.js";
+import { Eateries } from "./Eateries.js";
 
 const eateriesContainer = document.querySelector(".eateriesContainer");
 const eventHub = document.querySelector(".container");
@@ -17,9 +17,7 @@ const render = (eateriesCollection) => {
   eateriesContainer.innerHTML = `
     <select class="dropdown" id="eateriesSelect">
     <option value="0">Select A Place to Fill your Face...</option>
-    ${eateriesCollection
-      .map(
-        (eateriesObj) => `
+    ${eateriesCollection.map((eateriesObj) => `
     <option value="${eateriesObj.businessName}">${eateriesObj.businessName}</option>
     `
       )
@@ -34,7 +32,7 @@ eventHub.addEventListener("change", (changeEvent) => {
 
     const customEvent = new CustomEvent("eateriesSelected", {
       detail: {
-        selectedEateries: selectedEateries,
+        selectedEateries: selectedEateries
       },
     });
     console.log(customEvent);
