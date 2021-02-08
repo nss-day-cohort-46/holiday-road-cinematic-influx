@@ -15,7 +15,9 @@ export const ParkDetail = (parkObj) => {
         <p>Thursday:${parkObj.operatingHours[0].standardHours.thursday}</p>
         <p>Friday:${parkObj.operatingHours[0].standardHours.friday}</p>
         <p>Saturday:${parkObj.operatingHours[0].standardHours.saturday}</p>
-    `
+        <h3>Location</h3>
+        <p>${parkObj.addresses[0].city}, ${parkObj.addresses[0].stateCode}</p>
+        `
     contentContainer.innerHTML = parkDetailHTMLrepresentation
 }
 
@@ -23,7 +25,7 @@ export const ParkDetail = (parkObj) => {
 const eventHub = document.querySelector(".container")
 
 
-eventHub.addEventListener("DetailsClicked", event => {
+eventHub.addEventListener("ParkDetailsClicked", event => {
     const selectedParkId = event.detail.parkId
     const parkArray = useParks()
     const selectedPark = parkArray.find((parkObj) => {

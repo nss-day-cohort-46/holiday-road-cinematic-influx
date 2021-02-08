@@ -17,7 +17,7 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("parks--")) {
         const [prefix, parkId] = event.target.id.split("--")
-        const customEvent = new CustomEvent("DetailsClicked", {
+        const customEvent = new CustomEvent("ParkDetailsClicked", {
             detail: {
                 parkId: parkId
             }
