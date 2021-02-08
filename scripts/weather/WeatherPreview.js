@@ -1,12 +1,31 @@
-// import weather provide {getWeather,useWeather}
-// add eventHub
-// add eventListener to listen for customevent parkSelect
-// .find park in the array of parks(useParks) where the park name matches the park name of the detail
-// of the custom event
-// get park lat, long
-// getpark(lat,long)
-// useWeather()
-//.map weather return htmlRepresentation
-//find location on DOM to put weather htmlRepresentation
+import {useWeather,getWeather} from "./WeatherProvider.js"
+import {useParks,  getParks} from "../parks/ParkProvider.js"
+import {Weather} from "./Weather.js"
 
-//render weatherHTMLRepresentation to the DOM
+const eventHub = document.querySelector(".container")
+const weatherContainer = document.querySelector(".weatherPreview")
+
+
+eventHub.addEventListener("parkSelected", changeEvent => {
+    const selectedParkId = changeEvent.detail.selectedPark
+    const parkArray = useParks()
+    const theSelectedPark =  parkArray.find(parkObj => parkObj.id === selectedParkId)
+    getWeather(theSelectedPark.latitude,theSelectedPark.longitude).then(()=> {
+        const weather =useWeather()
+        console.log(weather)
+          render(weather)
+    })
+})
+
+  
+
+  const render = (weatherObj) => {
+    const weatherHTMLRepresentation = weatherObj.map(weather => Weather(weather)).join("")
+    weatherContainer.innerHTML += `
+    ${weatherHTMLRepresentation}
+    
+
+    
+      
+`
+  }
