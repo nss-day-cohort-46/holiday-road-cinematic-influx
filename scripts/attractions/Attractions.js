@@ -3,7 +3,7 @@ import "./AttractionDetail.js"
 export const Attraction = (attractionObj) => {
     return `
     <h2 class="attractionName">Attraction Name: ${attractionObj.name}</h2>
-    <button id="attraction--${attractionObj.id}" class="attractionButton">Details</button>
+    <button id="attraction--${attractionObj.id}" class="attractionButton detailButton">Details</button>
     `
 }
 

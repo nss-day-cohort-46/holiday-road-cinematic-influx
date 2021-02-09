@@ -5,10 +5,13 @@ const contentContainer = document.querySelector(".attractionDetails")
 
 export const AttractionDetail = (attractionObj) => {
     const attractionDetailHTMLrepresentation = `
+    <div class="modal--parent" id="attraction__modal">
         <h3>Description</h3>
         <p>${attractionObj.description}</p>
         <h3>Location</h3>
         <p>${attractionObj.city}, ${attractionObj.state}</p>
+        <button id="attractionmodal--close">Close</button>
+    </div>
     `
     contentContainer.innerHTML = attractionDetailHTMLrepresentation
 }
@@ -26,3 +29,12 @@ eventHub.addEventListener("AttractionDetailsClicked", event => {
     AttractionDetail(selectedAttraction)
 })
 
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "attractionmodal--close") {
+        closeModal()
+    }
+})
+
+const closeModal = () => {
+    contentContainer.innerHTML = ""
+}
