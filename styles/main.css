@@ -1,0 +1,23 @@
+@import './previewContainer.css';
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    display: flex;
+    flex-wrap: flex;
+}
+.logo{
+    width: 150px;
+}
+.savedContainer{
+    border: 1px solid black;
+    flex-basis: 25%;
+}
+.dropdown{
+    margin: 5px;
+}
+.headline{
+    text-align: center;
+}

@@ -3,7 +3,7 @@ import "./ParkDetail.js"
 export const Park = (parkObj) => {
     return `
     <h2 class="parkName">Park Name: ${parkObj.fullName}</h2>
-    <button id="parks--${parkObj.id}" class="parkButton">Details</button>
+    <button id="parks--${parkObj.id}" class="parkButton detailButton">Details</button>
     `
 }
 

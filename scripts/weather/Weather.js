@@ -1,6 +1,8 @@
 export const Weather = (weatherObj) => {
     return `
-    <h3 class="temp">Temp: ${weatherObj.temp.day} Farenheight</h3>
-    
+    <div class="weatherCard">
+    <h3 class="temp">Temp:</h3>
+    <p>${weatherObj.temp.day}°F</p>
+    </div>
     `
 }

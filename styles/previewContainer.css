@@ -1,0 +1,30 @@
+.weatherPreview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.weatherCard{
+    border: 1px solid  black;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+.previewContainer{
+    border: 1px solid black;
+    flex-basis: 70%;
+}
+.previewContainer, .savedContainer{
+    flex-shrink: inherit;
+    overflow-y: auto;
+	height: 60vh;
+    border-radius: 30px;
+}
+.parkPreview, .attractionPreview, .eateriesPreview{
+    display: flex;
+    justify-content: space-evenly;
+}
+.detailButton{
+    height: 25px;
+    height: 25px;
+    align-self: center;
+}
