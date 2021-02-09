@@ -6,10 +6,11 @@
 .weatherCard{
     border: 1px solid  black;
     padding: 5px;
+    border-radius: 10px;
     
 }
 .previewContainer{
-    border: 1px solid blue;
+    border: 1px solid black;
     flex-basis: 70%;
 }
 .previewContainer, .savedContainer{

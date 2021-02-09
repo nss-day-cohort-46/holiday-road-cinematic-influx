@@ -12,7 +12,7 @@ header{
     width: 150px;
 }
 .savedContainer{
-    border: 1px solid green;
+    border: 1px solid black;
     flex-basis: 25%;
 }
 .dropdown{
