@@ -21,7 +21,7 @@ eventHub.addEventListener("parkSelected", changeEvent => {
 
   const render = (weatherObj) => {
     const weatherHTMLRepresentation = weatherObj.map(weather => Weather(weather)).join("")
-    weatherContainer.innerHTML += `
+    weatherContainer.innerHTML = `
     ${weatherHTMLRepresentation}
     
 
